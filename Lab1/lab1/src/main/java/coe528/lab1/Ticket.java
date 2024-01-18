@@ -50,7 +50,7 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return getPassenger().name + ", " + getFlight() + ", ticket price: " + getPrice();
+        return getPassenger().name + ", " + getFlight() + ", ticket price: $" + getPrice();
     }
 
 }

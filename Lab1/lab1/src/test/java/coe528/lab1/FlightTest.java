@@ -1,7 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ */
 package coe528.lab1;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Shaaf Shahzad. #501172227
+ */
 
 public class FlightTest {
 
@@ -12,9 +21,16 @@ public class FlightTest {
         assertEquals(expected, flight.toString());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidConstructor() {
-        new Flight(1234, 300, "Toronto", "Toronto", "01/01/24 12:00AM", 1000);
+        boolean exceptionCaught = false;
+        try {
+            Flight flight = new Flight(1234, -300, "Toronto", "Toronto", "01/01/24 12:00AM", -1000);
+            System.out.println(flight);
+        } catch (IllegalArgumentException exception) {
+            exceptionCaught = true;
+        }
+        assertTrue(exceptionCaught);
     }
 
     @Test

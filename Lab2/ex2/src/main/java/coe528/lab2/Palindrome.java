@@ -1,22 +1,28 @@
 package coe528.lab2;
 
+/**
+ *
+ * @author Shaaf Shahzad, #501172227
+ */
 public class Palindrome {
 
-    // Requires: <Write the Requires clause here>
-    // Modifies: <Write the Modifies clause here>
-    // Effects: <Write the Effects clause here>
+    // Requires: Requires a string 'a'.
+    // Modifies: No modifications in this class.
+    // Effects: On execution, returns false if string 'a' is null or empty.
+    // If not null or empty, compare the start of the string to the end.
+    // If they do not match, then return false. Otherwise return true.
     public static boolean isPalindrome(String a) {
 
-        if (a == null) {
-            return true;
+        if (a == null || a.length() == 0) {
+            return false;
         }
 
-        int n = a.length();
-        for (int i = 0; i < (n / 2); ++i) {
-            if (a.charAt(i) != a.charAt(n - i - 1)) {
+        for (int i = 0; i < (a.length() / 2); i++) {
+            if (a.charAt(i) != a.charAt(a.length() - 1 - i)) {
                 return false;
             }
         }
+
         return true;
 
     }

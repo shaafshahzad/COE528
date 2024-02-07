@@ -13,16 +13,20 @@ public class Palindrome {
     // If they do not match, then return false. Otherwise return true.
     public static boolean isPalindrome(String a) {
 
+        // if there are no letters or null, return false
         if (a == null || a.length() == 0) {
             return false;
         }
 
+        // compare half of the string with the other half
+        // if they do not match, then return false
         for (int i = 0; i < (a.length() / 2); i++) {
             if (a.charAt(i) != a.charAt(a.length() - 1 - i)) {
                 return false;
             }
         }
 
+        // otherwise return true
         return true;
 
     }
